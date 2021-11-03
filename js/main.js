@@ -17,12 +17,13 @@ function win() {
 }
 
 function imgFlip(i) {
-  debugger;
-  if (!!i.target.parentNode.getAttribute("disabled")) return;
+  if (i.target.getAttribute("disabled")) {
+    console.log(i.target.getAttribute("disabled"));
+    return;
+  }
   imgChoices.push(i.target.parentNode);
   i.target.parentNode.setAttribute("disabled", true);
-  let x = i.target.parentNode;
-  match(x);
+  match();
 }
 function shuffle() {
   for (let i = img.length - 1; i > 0; i--) {
@@ -34,7 +35,7 @@ function shuffle() {
   return images;
 }
 
-function match(x) {
+function match() {
   if (imgChoices.length < 2) return;
   if (
     imgChoices[0].getAttribute("data-name") ===
