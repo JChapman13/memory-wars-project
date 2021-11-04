@@ -71,9 +71,9 @@ function level3() {
   for (let i = 0; i < newCards.length; i++) {
     let divEl = document.createElement("div");
     divEl.classList.add("squares");
-    divEl.setAttribute("data-name");
+    divEl.setAttribute("data-name", newCards[i].id);
     let imgEl = document.createElement("img");
-    imgEl.addAttribute("src", "");
+    imgEl.setAttribute("src", newCards[i].src);
     divEl.appendChild(imgEl);
     cardArr.push(divEl);
     init();
@@ -96,21 +96,22 @@ function shuffle() {
 //decides if you're clicking the div or the image, then runs through by exposing the image
 //then pushes the choice into an array, to be processed by match()
 function imgFlip(evt) {
-  let card = evt.target.parentNode;
-  if (card.getAttribute("img") !== "true") {
-    evt.target.style.opacity = 0.9;
-    if (card.getAttribute("disabled") === "true") return;
-    imgChoices.push(evt.target.parentNode);
-    evt.target.parentNode.setAttribute("disabled", true);
-    match();
-  } else {
-    return;
+  if (evt.target.parentNode.getAttribute("class") !== "rating") {
+    let card = evt.target.parentNode;
+    if (card.getAttribute("img") !== "true") {
+      evt.target.style.opacity = 0.9;
+      if (card.getAttribute("disabled") === "true") return;
+      imgChoices.push(evt.target.parentNode);
+      evt.target.parentNode.setAttribute("disabled", true);
+      match();
+    } else {
+      return;
+    }
   }
 }
 //checks that two images are selected, then if they are a match and runs win()
 //if they are not, then disable clicks, time(), reset images to being hidden, clear the array.
 function match() {
-  debugger;
   if (imgChoices.length < 2) return;
   if (
     imgChoices[0].getAttribute("data-name") ===
@@ -120,31 +121,32 @@ function match() {
     imgChoices.splice(0, imgChoices.length);
     win();
   } else {
-    board.style.pointerEvents = "none";
+    board.removeEventListener("click", imgFlip);
     setTimeout(function () {
-      console.log(imgChoices[0]);
-      imgChoices[0].childNodes[1].style.opacity = 0;
-      imgChoices[1].childNodes[1].style.opacity = 0;
+      imgChoices[0].children[0].style.opacity = 0;
+      imgChoices[1].children[0].style.opacity = 0;
       imgChoices[0].setAttribute("disabled", false);
       imgChoices[1].setAttribute("disabled", false);
       imgChoices.splice(0, imgChoices.length);
-      board.style.pointerEvents = "all";
+      board.addEventListener("click", imgFlip);
     }, 1000);
   }
 }
 //if match counter hits 8, win!
 function win() {
   if (matchCounter === 8) {
-    document.querySelector(".congrats").style.visibility = "visible";
+    document.querySelector(".congrats").style.display = "flex";
   }
 }
 //sets everything back to where it started.
 //changes the styling of the images to being hidden.
 function playAgain() {
+  // debugger;
   matchCounter = 0;
   for (let i = 0; i < squares.length; i++) {
-    squares[i].childNodes[1].style.opacity = 0;
+    squares[i].children[0].style.opacity = 0;
+    squares[i].style.display = "none";
   }
-  document.querySelector(".congrats").style.visibility = "hidden";
-  shuffle();
+  document.querySelector(".congrats").style.display = "none";
+  rtngBoard.style.display = "block";
 }
