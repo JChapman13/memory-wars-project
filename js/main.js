@@ -148,5 +148,5 @@ function playAgain() {
     squares[i].style.display = "none";
   }
   document.querySelector(".congrats").style.display = "none";
-  rtngBoard.style.display = "block";
+  rtngBoard.style.display = "flex";
 }
