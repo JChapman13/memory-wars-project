@@ -2,8 +2,6 @@ body {
   background-image: url("/css/Space.jpeg");
   background-color: black;
   font-family: DeathStar;
-  align-content: center;
-  position: relative;
 }
 h1 {
   text-align: center;
@@ -13,42 +11,42 @@ h1 {
   color: #fbe954;
   text-shadow: 0 0 2px #fbe954, 0 0 4px #fbe954;
 }
-
-.set {
-  display: grid;
-  grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+.board {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  position: relative;
 }
 .squares {
   background-color: #fbea54c9;
   box-shadow: 0 0 5px 2px #fbea54ce;
   border-radius: 20px;
   margin: 10px;
-  width: 300px;
   text-align: center;
-  box-sizing: border-box;
 }
 img {
-  width: 50%;
+  opacity: 0;
+  width: 75%;
 }
-
 .congrats {
-  display: inline-block;
   background-color: rgba(0, 0, 0, 0.836);
   border-radius: 20px;
   width: 500px;
-  height: 200px;
-  left: 30%;
-  top: -500px;
+  height: 250px;
   color: #fbea54;
   text-shadow: 0 0 1px #fbe954, 0 0 4px #fbe954;
   letter-spacing: 4px;
   text-align: center;
-  position: relative;
   font-size: 30px;
+  visibility: hidden;
+  justify-content: center;
+  position: absolute;
+  align-self: center;
+  transform: translateY(-50px);
 }
 
-#play-again {
+button {
   background-color: black;
   color: #fbea54de;
   text-shadow: 0 0 2px #fbe954, 0 0 3.5px #fbe954;
@@ -57,17 +55,5 @@ img {
   font-size: 23px;
   border-radius: 12px;
   opacity: 0.95;
+  margin-top: 15px;
 }
-
-/* #move {
-  color: #fbe954;
-  letter-spacing: 4px;
-  font-size: 35px;
-  text-shadow: 0 0 2px #fbe954, 0 0 2.5px #fbe954;
-}
-#timer {
-  font-size: 35px;
-  letter-spacing: 4px;
-  color: #fbe954;
-  text-shadow: 0 0 2px #fbe954, 0 0 2.5px #fbe954;
-} */
