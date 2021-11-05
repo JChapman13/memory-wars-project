@@ -20,6 +20,8 @@ A memory game that requires you to reveal images on the screen and match their d
 
 https://jchapman13.github.io/memory-wars-project/
 
+made using HTML, CSS, Javascript.
+
 ## Lessons Learned
 
 As a first project, having only learned Javascript for 2 weeks, what DIDN'T I learn?!
