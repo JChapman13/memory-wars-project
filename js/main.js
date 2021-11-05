@@ -8,6 +8,7 @@ const lvl2 = document.querySelector("#lvl2");
 const lvl3 = document.querySelector("#lvl3");
 const rtngBoard = document.querySelector(".rating");
 
+// variable that is holding additional images that will be iterated through based on choice of level
 let newCards = [
   { id: "bb-8", src: "./imgs/bb-8@4x.png" },
   { id: "uranus", src: "/imgs/uranus@4x.png" },
@@ -37,6 +38,7 @@ let cardArr = Array.from(squares);
 
 // event listeners
 //for selecting the images & for clicking the reset button on the win screen
+//for choosing level rating
 board.addEventListener("click", imgFlip);
 rstBtn.addEventListener("click", playAgain);
 lvl1.addEventListener("click", level1);
@@ -47,11 +49,16 @@ lvl3.addEventListener("click", level3);
 function init() {
   shuffle();
 }
+
+// level 1-3, adds additional cards from the new cards array.
+// adjusts win condition
 function level1() {
   rtngBoard.style.display = "none";
+  cardArr = Array.from(squares);
   init();
 }
 function level2() {
+  cardArr = Array.from(squares);
   rtngBoard.style.display = "none";
   matchCounter = -8;
   for (let i = 0; i < newCards.length - 8; i++) {
@@ -66,6 +73,7 @@ function level2() {
   }
 }
 function level3() {
+  cardArr = Array.from(squares);
   rtngBoard.style.display = "none";
   matchCounter = -16;
   for (let i = 0; i < newCards.length; i++) {
@@ -91,6 +99,7 @@ function shuffle() {
   cardArr.forEach(function (card) {
     board.appendChild(card);
     card.style.visibility = "visible";
+    card.style.display = "block";
   });
 }
 //decides if you're clicking the div or the image, then runs through by exposing the image
@@ -141,12 +150,13 @@ function win() {
 //sets everything back to where it started.
 //changes the styling of the images to being hidden.
 function playAgain() {
-  // debugger;
   matchCounter = 0;
   for (let i = 0; i < squares.length; i++) {
     squares[i].children[0].style.opacity = 0;
     squares[i].style.display = "none";
   }
+
   document.querySelector(".congrats").style.display = "none";
-  rtngBoard.style.display = "flex";
+  rtngBoard.style.display = "block";
+  rtngBoard.style.position = "relative";
 }
