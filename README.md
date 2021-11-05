@@ -52,7 +52,5 @@ As a first project, having only learned Javascript for 2 weeks, what DIDN'T I le
 ## Screenshots
 
 ![App Screenshot](https://github.com/JChapman13/memory-wars-project/blob/gh-pages/imgs/start.png)
-
-![App Screenshot](https://git.generalassemb.ly/jchapman/Memory-Game/blob/gh-pages/imgs/play.png)
-
-![App Screenshot](https://git.generalassemb.ly/jchapman/Memory-Game/blob/gh-pages/imgs/win.png)
+![App Screenshot](https://github.com/JChapman13/memory-wars-project/blob/gh-pages/imgs/play.png)
+![App Screenshot](https://github.com/JChapman13/memory-wars-project/blob/gh-pages/imgs/win.png)
