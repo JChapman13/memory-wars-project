@@ -2,8 +2,7 @@
 
 A memory game that requires you to reveal images on the screen and match their duplicate.
 
-![Image of Title]
-(https://github.com/JChapman13/memory-wars-project/blob/gh-pages/imgs/title.png)
+![App Screenshot](https://github.com/JChapman13/memory-wars-project/blob/gh-pages/imgs/title.png)
 
 ## Authors
 
