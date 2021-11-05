@@ -2,6 +2,9 @@
 
 A memory game that requires you to reveal images on the screen and match their duplicate.
 
+![Image of Title]
+(https://github.com/JChapman13/memory-wars-project/blob/gh-pages/imgs/title.png)
+
 ## Authors
 
 - [@justinchapman](https://github.com/JChapman13)
@@ -48,3 +51,7 @@ As a first project, having only learned Javascript for 2 weeks, what DIDN'T I le
 - Adding some visual effects to make it feel a little more engaging
 
 ## Screenshots
+
+![App Screenshot](https://github.com/JChapman13/memory-wars-project/blob/gh-pages/imgs/start.png)
+![App Screenshot](https://git.generalassemb.ly/jchapman/Memory-Game/blob/gh-pages/imgs/play.png)
+![App Screenshot](https://git.generalassemb.ly/jchapman/Memory-Game/blob/gh-pages/imgs/win.png)
