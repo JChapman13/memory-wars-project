@@ -16,14 +16,9 @@ A memory game that requires you to reveal images on the screen and match their d
 - Multi level difficulties
 - Timer and move counter (On its way!)
 
-## Installation
+## Play
 
-Install Memory Wars with npm
-
-```bash
-  npm install memory-wars
-  cd memory-wars
-```
+https://jchapman13.github.io/memory-wars-project/
 
 ## Lessons Learned
 
